@@ -1,0 +1,122 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvestLocal - Empowering Local Investments</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="background-image">
+  <header>
+    <div class="logo">InvestLocal</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#opportunities">Opportunities</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Empowering Local Investments</h1>
+      <p>Connecting investors with communities in Garissa, Eastleigh, and beyond.</p>
+      <button>Explore Opportunities</button>
+    </div>
+  </section>
+
+  <section id="opportunities">
+    <h2>Local Investment Opportunities</h2>
+    <input type="text" id="search" placeholder="Search by area or type..." onkeyup="filterOpportunities()" />
+    <div class="opportunity-container" id="opportunityContainer"></div>
+  </section>
+
+  <section id="about">
+    <h2>About InvestLocal</h2>
+    <p>
+      InvestLocal is a digital platform designed to connect local investors with high-potential community projects
+      across regions such as Garissa, Eastleigh, and Mandera. It promotes economic empowerment by showcasing
+      verified opportunities in agriculture, real estate, retail, and renewable energy. The platform enhances transparency,
+      boosts trust, and encourages youth participation in community-based investments.
+    </p>
+    <p>
+      Our mission is to support sustainable development through localized investments that empower communities and
+      foster regional growth. By leveraging simple web technologies, InvestLocal ensures that investors and entrepreneurs
+      can interact seamlessly and make informed financial decisions.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 InvestLocal | Empowering Communities through Investment</p>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script type="module">
+    // Import Firebase modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+  
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDFdKQYziMHkYSKBAUyoN86glzO8eQsD7c",
+  authDomain: "investment-awarness-system.firebaseapp.com",
+  databaseURL: "https://investment-awarness-system-default-rtdb.firebaseio.com",
+  projectId: "investment-awarness-system",
+  storageBucket: "investment-awarness-system.firebasestorage.app",
+  messagingSenderId: "881427793173",
+  appId: "1:881427793173:web:ec71f7ed377e976de4d51c",
+  measurementId: "G-YPR9TCFZ43"
+};
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    // Handle form submission
+    const contactForm = document.getElementById("contactForm");
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      const contactRef = ref(db, "contacts");
+      const newContact = push(contactRef);
+
+      set(newContact, {
+        name: name,
+        email: email,
+        message: message,
+        timestamp: new Date().toISOString()
+      })
+        .then(() => {
+          alert("Message sent successfully!");
+          contactForm.reset();
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Failed to send message. Check console for details.");
+        });
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

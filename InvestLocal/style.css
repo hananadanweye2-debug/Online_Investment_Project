@@ -1,0 +1,250 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #e0f7fa, #f1f8e9);
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: linear-gradient(90deg, #00796b, #26a69a);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ffeb3b;
+}
+
+/* Hero Section - Clean & Simple */
+.hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url("assets/images/invest.jpg") center/cover no-repeat;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero button {
+  background: linear-gradient(45deg, #ffca28, #ffb300);
+  color: #fff;
+  border: none;
+  padding: 15px 35px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Opportunities */
+#opportunities {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#opportunities h2 {
+  font-size: 2.5em;
+  color: #00796b;
+  margin-bottom: 30px;
+}
+
+#search {
+  padding: 12px;
+  width: 50%;
+  border: 2px solid #00796b;
+  border-radius: 30px;
+  font-size: 1em;
+  outline: none;
+  margin-bottom: 40px;
+  transition: box-shadow 0.3s ease;
+}
+
+#search:focus {
+  box-shadow: 0 0 10px rgba(0,150,136,0.4);
+}
+
+.opportunity-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.opportunity-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  padding: 25px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.opportunity-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+.opportunity-card h3 {
+  color: #00796b;
+  font-size: 1.5em;
+}
+
+/* About & Contact Sections */
+#about, #contact {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#about p {
+  max-width: 800px;
+  margin: 15px auto;
+  font-size: 1.1em;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+form input, form textarea {
+  padding: 12px;
+  border: 2px solid #00a19d;
+  border-radius: 30px;
+  font-size: 1em;
+  outline: none;
+}
+
+form textarea {
+  height: 120px;
+  resize: none;
+}
+
+form button {
+  background: linear-gradient(45deg, #00796b, #26a69a);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, #00796b, #26a69a);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+.form-section, .admin-section {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2, .admin-section h2 {
+  text-align: center;
+  color: #333;
+}
+
+form input, form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background-color: #0b8457;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #096e47;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
